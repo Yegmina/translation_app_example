@@ -1,4 +1,6 @@
 // Dropdown tag element, where user can select language
+//import {getElement} from './basic';
+
 const languageSelect=getElement("id", "languageSelect")
 // The default lang is en
 loadLanguage("en"); // it is not required to call at the start because tags already have text content in html
@@ -65,12 +67,33 @@ function applyTranslations(translations) {
     });
 }
 
+ /* basic functions from my js template */
 
-/* basic functions from my js template */
+ /*get value or element functions*/
+function getValueByName(local_name) {
+  const element = getElement('name', local_name);
+  return element ? element.value : null;
+}
+
+function getValueById(local_id) {
+  const element = getElement('id', local_id);
+  return element ? element.value : null;
+}
+
+function getValueByTagName(local_tag) {
+  const element = getElement('tag', local_tag);
+  return element ? element.value : null;
+}
+
+function getValueByClassName(local_class) {
+  const element = getElement('class', local_class);
+  return element ? element.value : null;
+}
+
+
 function getElement(selector, value) {
   let elements;
 
-  // Handle selectors uniformly with querySelector/querySelectorAll
   switch (selector) {
     case 'name':
       elements = document.querySelectorAll(`[name="${value}"]`);
@@ -102,3 +125,4 @@ function getElement(selector, value) {
 
   return elements[0];
 }
+

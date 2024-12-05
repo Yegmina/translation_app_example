@@ -7,9 +7,13 @@
     <title>Translation App Example</title>
     <!-- Link to the main CSS file -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}" />
+    <!-- File needed, have some basic functions used in other .js files -->
+   <!-- <script type="module" src="{{ url_for('static', filename='scripts/basic.js') }}"></script>
+     Link to the JavaScript file for changing language of whole WebPage -->
+    <script src="{{ url_for('static', filename='scripts/language_switcher.js') }}" defer></script>
+    <!-- Link to the JavaScript file for translation En to Fi -->
+    <script src="{{ url_for('static', filename='scripts/main.js') }}" defer></script>
 
-    <!-- Link to the JavaScript file for changing language of whole WebPage -->
-    <script defer src="{{ url_for('static', filename='scripts/language_switcher.js') }}"></script>
 </head>
 <body>
     <header>
@@ -30,11 +34,15 @@
         </section>
         <button id="translateButton" data-i18n="translateButton">Translate</button>
         <p id="loadingMessage" class="loading" style="display: none;" data-i18n="loadingMessage">Translating, please wait...</p>
+        <p id="notification" class="comments"></p>
+
         <section id="outputSection" style="display: none;">
             <h2 data-i18n="outputTitle">Translation:</h2>
             <p id="translatedText"></p>
+
         </section>
     </main>
+
 
     <footer>
         <p data-i18n="footerText">Made by Tereshchenko Yehor</p>
