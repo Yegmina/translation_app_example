@@ -1,11 +1,11 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, send_from_directory, jsonify
 
 # Create the Flask app instance
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    """launch file the on main page"""
+    """Launch file index.html on main page"""
     try:
         return render_template("index.html")
     except Exception as e:
@@ -13,6 +13,13 @@ def index():
         app.logger.error(f"Error rendering index.html: {e}")
         # Return a user-friendly error message
         return jsonify({"error": "Unable to load the page. Probably index.html is missing"}), 500
+
+
+@app.route("/locales/<path:filename>")
+def serve_locale(filename):
+    """Send localization json files (en.json&fi.json) from the 'locales' directory."""
+    return send_from_directory("locales", filename)
+
 
 @app.errorhandler(404)
 def page_not_found(e):

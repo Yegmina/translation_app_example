@@ -1,0 +1,12 @@
+{
+    "title": "Translation App Example",
+    "selectLanguage": "Select Language of WebPage:",
+    "english": "English",
+    "finnish": "Finnish",
+    "enterText": "Enter text to translate:",
+    "placeholderText": "Enter text here...",
+    "translateButton": "Translate",
+    "loadingMessage": "Translating, please wait...",
+    "outputTitle": "Translation:",
+    "footerText": "Made by Tereshchenko Yehor"
+}

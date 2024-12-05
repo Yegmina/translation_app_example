@@ -1,0 +1,12 @@
+{
+    "title": "Käännössovelluksen esimerkki",
+    "selectLanguage": "Valitse verkkosivun kieli:",
+    "english": "Englanti kieli",
+    "finnish": "Suomi kieli",
+    "enterText": "Kirjoita käännettävä teksti:",
+    "placeholderText": "Kirjoita teksti tähän...",
+    "translateButton": "Käännä",
+    "loadingMessage": "Käännetään, odota hetki...",
+    "outputTitle": "Käännös:",
+    "footerText": "Tekijä: Tereshchenko Yehor"
+}
