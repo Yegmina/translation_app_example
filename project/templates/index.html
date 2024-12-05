@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Translation App Example</title>
+    <!-- Link to the main CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}" />
+
+    <!-- Link to the JavaScript file for changing language of whole WebPage -->
+    <script defer src="{{ url_for('static', filename='scripts/language_switcher.js') }}"></script>
 </head>
 <body>
+    <header>
+        <h1 data-i18n="title">Translation App Example</h1>
+        <nav>
+            <label for="languageSelect" data-i18n="selectLanguage">Select Language of WebPage:</label> <!-- language of ALL basic content in webpage-->
+            <select id="languageSelect">
+                <option value="en" data-i18n="english">English</option>
+                <option value="fi" data-i18n="finnish">Finnish</option>
+            </select>
+        </nav>
+    </header>
 
+    <main>
+        <section>
+            <label for="textInput" data-i18n="enterText">Enter text to translate:</label> <br>
+            <textarea id="textInput" rows="4" placeholder="Enter text here..." data-i18n-placeholder="placeholderText"></textarea>
+        </section>
+        <button id="translateButton" data-i18n="translateButton">Translate</button>
+        <p id="loadingMessage" class="loading" style="display: none;" data-i18n="loadingMessage">Translating, please wait...</p>
+        <section id="outputSection" style="display: none;">
+            <h2 data-i18n="outputTitle">Translation:</h2>
+            <p id="translatedText"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footerText">Made by Tereshchenko Yehor</p>
+    </footer>
 </body>
 </html>
