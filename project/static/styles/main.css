@@ -1,0 +1,257 @@
+/* General Reset and Typography */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+/* Background Video Styling */
+#backgroundVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Keeps it behind other content */
+}
+
+
+/* Ensure content is visible over the video */
+header, main, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional: Hide video if it fails to load */
+.no-video #backgroundVideo {
+    display: none;
+}
+
+/* Header Styling */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #ead68f;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+label {
+    font-size: 1rem;
+    margin: 0;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    background: rgba(81, 74, 13, 0.38);
+
+}
+header nav {
+    margin-top: 15px;
+}
+
+header select {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: 0 4px 6px rgba(149, 130, 36, 0.8);
+    transition: background 0.3s, transform 0.2s ease-in-out;
+}
+
+header select:hover {
+    background: rgba(216, 205, 119, 0.9);
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+main section {
+    margin-bottom: 20px;
+}
+
+main label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ead68f;
+}
+
+main textarea {
+    width: 90%;
+    max-width: 500px;
+    height: 100px;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.45);
+    transition: background 0.3s, transform 0.2s ease-in-out;
+}
+
+main textarea:focus {
+    outline: none;
+    border: 2px solid rgba(216, 205, 119, 0.9);
+    box-shadow: 0 0 10px rgba(216, 205, 119, 0.8);
+}
+
+
+
+/* Footer Styling */
+footer {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    text-align: center;
+    color: #ead68f;
+    font-size: 0.9rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+/* Notification */
+
+/* Notification Styling */
+#notification {
+    display: none;
+    font-size: 1rem;
+    padding: 15px 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8); /* Dark translucent background */
+    color: #ead68f; /* Golden text color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* Soft glow around text */
+}
+
+/* Add glowing border on hover */
+#notification:hover {
+    border: 2px solid rgba(216, 205, 119, 0.9);
+    box-shadow: 0 0 15px rgba(216, 205, 119, 0.8);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+/* Output Section Styling */
+#outputSection {
+    margin-top: 20px;
+}
+
+#outputSection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ead68f;
+}
+
+#outputSection p {
+    font-size: 1.2rem;
+    background: rgba(46, 35, 7, 0.74);
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+/* Loading Message */
+.loading {
+    font-style: italic;
+    color: #fffb00;
+    animation: pulse 1.5s infinite;
+}
+
+/* Keyframes */
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+@media (max-width: 768px) {
+    #backgroundVideo {
+        display: none;
+    }
+}
+
+/* Optional button glow effect */
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7); /* Slightly transparent for contrast */
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    border-radius: 30px;
+}
+.glow-on-hover:hover {
+    background: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+    color: #ead68f; /* Ensures a strong contrast */
+    font-weight: bold; /* Optional for better visibility */
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #eae28c
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}

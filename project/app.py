@@ -22,6 +22,11 @@ def serve_locale(filename):
     """Send localization json files (en.json&fi.json) from the 'locales' directory."""
     return send_from_directory("locales", filename)
 
+@app.route('/static/videos/<filename>')
+def serve_video(filename):
+    """Serve static vidoe files from the 'static' directory."""
+    return send_from_directory('static/videos', filename, mimetype='video/mp4')
+
 
 # Static files route
 @app.route('/static/<path:filename>')
@@ -32,6 +37,8 @@ def serve_static(filename):
     except Exception as e:
         app.logger.error(f"Error serving static file {filename}: {e}")
         return jsonify({"error": f"Unable to serve {filename}"}), 500
+
+
 
 
 """translation functions"""

@@ -14,6 +14,7 @@ translateButton.addEventListener("click", async () => {
 
     if (!textInput) {
         //alert("Please enter some text to translate.");
+        notificationText.style.display="block";
         notificationText.textContent="Please, enter some text to translate!"
         loadingMessage.style.display = "none";
         return;
@@ -38,6 +39,7 @@ translateButton.addEventListener("click", async () => {
         // Update the UI with the translated text
         translatedText.textContent = data.translatedText;
         outputSection.style.display = "block";
+        notificationText.style.display="none";
     } catch (error) {
         console.error("Translation error:", error);
         alert("An error occurred while translating the text.");

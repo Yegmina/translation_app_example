@@ -13,9 +13,16 @@
     <script type="module" src="{{ url_for('static', filename='scripts/language_switcher.js') }}" defer></script>
     <!-- Link to the JavaScript file for translation En to Fi -->
     <script type="module" src="{{ url_for('static', filename='scripts/main.js') }}" defer></script>
+    <!-- Link to the JaveScript file, used for animations, video appearing etc -->
+    <script type="module" src="{{ url_for('static', filename='scripts/anim.js') }}" defer></script>
+
 
 </head>
 <body>
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="{{ url_for('static', filename='videos/background.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <header>
         <h1 data-i18n="title">Translation App Example</h1>
         <nav>
@@ -32,7 +39,7 @@
             <label for="textInput" data-i18n="enterText">Enter text to translate:</label> <br>
             <textarea id="textInput" rows="4" placeholder="Enter text here..." data-i18n-placeholder="placeholderText"></textarea>
         </section>
-        <button id="translateButton" data-i18n="translateButton">Translate</button>
+        <button id="translateButton" data-i18n="translateButton" class="glow-on-hover">Translate</button>
         <p id="loadingMessage" class="loading" style="display: none;" data-i18n="loadingMessage">Translating, please wait...</p>
         <p id="notification" class="comments"></p>
 
