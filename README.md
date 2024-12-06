@@ -56,7 +56,7 @@ A multilingual web application that translates text from English to Finnish and 
 1. **Clone the repository**
    ```bash
    git clone https://github.com/Yegmina/translation_app_example.git
-   cd translation-app-example
+   cd translation-app-example/project
    ```
 
 2. **Set up a virtual environment**
