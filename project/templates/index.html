@@ -8,11 +8,11 @@
     <!-- Link to the main CSS file -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}" />
     <!-- File needed, have some basic functions used in other .js files -->
-   <!-- <script type="module" src="{{ url_for('static', filename='scripts/basic.js') }}"></script>
-     Link to the JavaScript file for changing language of whole WebPage -->
-    <script src="{{ url_for('static', filename='scripts/language_switcher.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='scripts/basic.js') }}"></script>
+    <!-- Link to the JavaScript file for changing language of whole WebPage -->
+    <script type="module" src="{{ url_for('static', filename='scripts/language_switcher.js') }}" defer></script>
     <!-- Link to the JavaScript file for translation En to Fi -->
-    <script src="{{ url_for('static', filename='scripts/main.js') }}" defer></script>
+    <script type="module" src="{{ url_for('static', filename='scripts/main.js') }}" defer></script>
 
 </head>
 <body>

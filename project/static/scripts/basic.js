@@ -1,14 +1,5 @@
  /* basic functions from my js template */
 
-
- /*Not in use*/
-
-
-
-
-
-
-
  /*get value or element functions*/
 export function getValueByName(local_name) {
   const element = getElement('name', local_name);
