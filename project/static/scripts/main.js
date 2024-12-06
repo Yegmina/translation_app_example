@@ -21,6 +21,8 @@ translateButton.addEventListener("click", async () => {
     }
 
     try {
+        notificationText.style.display="none";
+
         const response = await fetch("/translate", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
